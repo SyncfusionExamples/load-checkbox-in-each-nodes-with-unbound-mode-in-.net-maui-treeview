@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UnboundModeCheckbox.MainPage"
+             xmlns:treeview="clr-namespace:Syncfusion.Maui.TreeView;assembly=Syncfusion.Maui.TreeView"
+             xmlns:treeviewengine="clr-namespace:Syncfusion.TreeView.Engine;assembly=Syncfusion.Maui.TreeView"
+             xmlns:checkbox="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons">
+    
+    <ContentPage.Content>
+        <treeview:SfTreeView x:Name="treeView" 
+                             CheckBoxMode="Recursive"
+                             SelectionMode="None">
+
+            <treeview:SfTreeView.Nodes>
+                <treeviewengine:TreeViewNode Content="North America" IsExpanded="True">
+                    <treeviewengine:TreeViewNode.ChildNodes>
+                        <treeviewengine:TreeViewNode Content="United States of America"/>
+                        <treeviewengine:TreeViewNode Content="Cuba"/>
+                        <treeviewengine:TreeViewNode Content="Mexico" IsChecked="True"/>
+                    </treeviewengine:TreeViewNode.ChildNodes>
+                </treeviewengine:TreeViewNode>
+                <treeviewengine:TreeViewNode Content="Africa" IsExpanded="True">
+                    <treeviewengine:TreeViewNode.ChildNodes>
+                        <treeviewengine:TreeViewNode Content="Nigeria" IsChecked="True"/>
+                        <treeviewengine:TreeViewNode Content="Egypt"/>
+                        <treeviewengine:TreeViewNode Content="South Africa"/>
+                    </treeviewengine:TreeViewNode.ChildNodes>
+                </treeviewengine:TreeViewNode>
+                <treeviewengine:TreeViewNode Content="Asia" IsExpanded="True">
+                    <treeviewengine:TreeViewNode.ChildNodes>
+                        <treeviewengine:TreeViewNode Content="China"/>
+                        <treeviewengine:TreeViewNode Content="India"/>
+                        <treeviewengine:TreeViewNode Content="Japan"/>
+                    </treeviewengine:TreeViewNode.ChildNodes>
+                </treeviewengine:TreeViewNode>
+                <treeviewengine:TreeViewNode Content="Europe" IsExpanded="True">
+                    <treeviewengine:TreeViewNode.ChildNodes>
+                        <treeviewengine:TreeViewNode Content="Denmark" IsChecked="True"/>
+                        <treeviewengine:TreeViewNode Content="Finland"/>
+                        <treeviewengine:TreeViewNode Content="Austria" IsChecked="True"/>
+                    </treeviewengine:TreeViewNode.ChildNodes>
+                </treeviewengine:TreeViewNode>
+                <treeviewengine:TreeViewNode Content="South America" IsExpanded="True">
+                    <treeviewengine:TreeViewNode.ChildNodes>
+                        <treeviewengine:TreeViewNode Content="Brazil"/>
+                        <treeviewengine:TreeViewNode Content="Colombia"/>
+                        <treeviewengine:TreeViewNode Content="Argentina"/>
+                        <treeviewengine:TreeViewNode Content="Peru"/>
+                        <treeviewengine:TreeViewNode Content="Chile"/>
+                    </treeviewengine:TreeViewNode.ChildNodes>
+                </treeviewengine:TreeViewNode>
+                <treeviewengine:TreeViewNode Content="Oceania" IsExpanded="True">
+                    <treeviewengine:TreeViewNode.ChildNodes>
+                        <treeviewengine:TreeViewNode Content="Australia"/>
+                        <treeviewengine:TreeViewNode Content="New Zealand"/>
+                        <treeviewengine:TreeViewNode Content="Samoa"/>
+                        <treeviewengine:TreeViewNode Content="Tonga"/>
+                        <treeviewengine:TreeViewNode Content="Vanuatu"/>
+                    </treeviewengine:TreeViewNode.ChildNodes>
+                </treeviewengine:TreeViewNode>
+            </treeview:SfTreeView.Nodes>
+
+            <treeview:SfTreeView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="5">
+                        <checkbox:SfCheckBox Text="{Binding Content}" IsChecked="{Binding IsChecked, Mode=TwoWay}"/>
+                    </Grid>
+                </DataTemplate>
+            </treeview:SfTreeView.ItemTemplate>
+        </treeview:SfTreeView>
+
+    </ContentPage.Content>
+</ContentPage>
